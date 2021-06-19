@@ -20,3 +20,12 @@ src="https://www.facebook.com/tr?id=512586253523202&ev=PageView&noscript=1"
 <!-- End Facebook Pixel Code -->
 </head>
 
+<body>
+  <button id="addToCartButton">Purchase</button>
+<script type="text/javascript">
+  $('#$addToCartButton').click(function() {
+    fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+  });
+</script>
+  <\body>
+
