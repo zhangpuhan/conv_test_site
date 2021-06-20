@@ -23,7 +23,37 @@ src="https://www.facebook.com/tr?id=512586253523202&ev=PageView&noscript=1"
   <button id="addToCartButton">Purchase</button>
 <script type="text/javascript">
   $('#$addToCartButton').click(function() {
-    fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+//     fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+    curl -X POST \
+  -F 'data=[data=[
+       {
+         "event_name": "Purchase",
+         "event_time": 1624203454,
+         "user_data": {
+           "em": [
+             "309a0a5c3e211326ae75ca18196d301a9bdbd1a882a4d2569511033da23f0abd"
+           ],
+           "ph": [
+             "254aa248acb47dd654ca3ea53f48c2c26d641d23d7e2e93a1ec56258df7674c4",
+             "6f4fcb9deaeadc8f9746ae76d97ce1239e98b404efe5da3ee0b7149740f89ad6"
+           ]
+         },
+         "contents": [
+           {
+             "id": "product123",
+             "quantity": 1,
+             "delivery_category": "home_delivery"
+           }
+         ],
+         "custom_data": {
+           "currency": "usd",
+           "value": 123.45
+         }
+       }
+     ]' \
+  -F 'access_token=EAAF50q5qQTcBAMfIoiIUs5jVMV2eewc7fyTV1ZB3Kt2cW9BEzy46PGsD9BDtbT1wQUFM24rNgusm0xRqlepZBpiNAZAcZAhHOXS3ZAatra9xWIwNwp1dcO020hptRicXzQatdAmALHHGW48BjJAcLzsBvnwQmDNd0XiIqyk9cZAnH3IMH3ud5TsEmtwBXxrsQZD' \
+  https://graph.facebook.com/v11.0/512586253523202
+/events
   });
 </script>
 
