@@ -34,17 +34,6 @@ src="https://www.facebook.com/tr?id=512586253523202&ev=PageView&noscript=1"
 <button id="addToCartButton">Purchase</button>
 <script type="text/javascript">
   $('#$addToCartButton').click(function() {
-    window.alert = null;
-alert('test'); // fail
-delete window.alert; // true
-alert('test'); // win
+    document.write(5 + 8);
   });
  </script>
-
-<button id="addToCartButton">Test</button>
-<script type="text/javascript">
-  $('#$addToCartButton').click(function() {
-    window.alert("test");
-  });
- </script>
-
