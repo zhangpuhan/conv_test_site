@@ -1,45 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+
+<title>BearDog</title>
 <head>
-<h1>Online shop example website</h1>
-  <meta name="facebook-domain-verification" content="dp0is28g4bhjckp5cz0yo1qeg6spcv" />
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '512586253523202');
-fbq('track', 'PageView');
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<!-- 
+  copy pixel code below and add this as well
+  fbq('track', 'ViewContent');
+  -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '417098542765453');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=512586253523202&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
+<script>
+  (function() {
+    const eventsToFire = [
+      () => fbq('track', 'Schedule'),
+      () => fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'}),
+      () => fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'}),
+      () => fbq('track', 'SubmitApplication'),
+      () => fbq('track', 'Contact'),
+      () => fbq('track', 'FindLocation')
+    ];
+    function scheduleOne() {
+      if (eventsToFire.length === 0) {
+        return;
+      }
+      setTimeout(() => {
+        const idx = [Math.floor(Math.random() * eventsToFire.length)];
+        eventsToFire[idx]();
+        eventsToFire.splice(idx, 1);
+        scheduleOne();
+      }, 2000 + Math.random() * 2 * 1000)
+    }
+    scheduleOne();
+  })()
+</script>
 </head>
-  
+
 <body>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Bear<br>Dog</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
+    <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
+    <a href="#packages" onclick="fbq('track', 'Contact');" class="w3-bar-item w3-button w3-hover-white">Packages</a> 
+    <a href="#contact" onclick="fbq('track', 'FindLocation');" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
 
-<h1>The onclick Event</h1>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>BearDog</span>
+</header>
 
-<p>The onclick event is used to trigger a function when an element is clicked on.</p>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
 
-<button onclick="myFunction()">Click me</button>
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Designed in CA</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Created for All</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="AD-OddisGood_iPhoneCase.png" style="width:100%" onclick="onClick(this)" alt="iPhone Green">
+      <img src="BearDog-Stickers.png" style="width:100%" onclick="onClick(this)" alt="Bag!">
+      <img src="EmbracetheOdd-Tee-Olive.png" style="width:100%" onclick="onClick(this)" alt="T-shirt">
+    </div>
 
-<p id="demo"></p>
+    <div class="w3-half">
+       <img src="Flower-Tee-NavyBA.png" style="width:100%" onclick="onClick(this)" alt="Blue Tees">
+      <img src="Island-Tote.png" style="width:100%" onclick="onClick(this)" alt="Stickers!">
+      <img src="StayOdd_iPhoneCase.png" style="width:100%" onclick="onClick(this)" alt="iPhone Yellow">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>A curated collection of goods that celebrates the unconventional, daring and unique. Odd is good. Designed by Studio X.</p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Designers.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>The best team in the world.</p>
+    <p><b>Our designers are thoughtfully chosen</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Ronnie Wright</h3>
+          <p class="w3-opacity">Founder</p>
+          <p>I believe in the power of elegant minimalism in a world increasingly saturated with garish colour.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Kristina Sharp</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>I use a variety of software and concepts to create creative, innovative, and original package designs for the brand. I am an Adobe Illustrator Certified Expert.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3>Andre Alvarado</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>I love designing simple, clean swags and shipping them to our customers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Subscribe to BearDog monthly. A box of swags arriving at your doorstep every last Sunday of the Month!</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16">1 Graphic Tees</li>
+        <li class="w3-padding-16">1 iPhone Case</li>
+        <li class="w3-padding-16">1 Coffee Mug</li>
+        <li class="w3-padding-16">
+          <h2>$ 199</h2>
+          <span class="w3-opacity">per year</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black" onClick="window.open('https://teespring.com/stores/beardogbrand/collection/apparel?page=1');">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+        
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16">2 Graphic Tees</li>
+        <li class="w3-padding-16">1 iPhone Case</li>
+        <li class="w3-padding-16">1 Coffee Mug</li>
+        <li class="w3-padding-16">5 Stickers</li>
+        <li class="w3-padding-16">3 Masks</li>
+        <li class="w3-padding-16">
+          <h2>$ 249</h2>
+          <span class="w3-opacity">per year</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-red w3-padding-large w3-hover-black" onClick="window.open('https://teespring.com/stores/beardogbrand/collection/hoodies-sweatshirts?page=1');">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Bulk order for your team? Please fill in the form!</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onClick="window.open('https://teespring.com/stores/beardogbrand/collection/hoodies-sweatshirts?page=1');">Send Message</button>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
 
 <script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
 }
 </script>
 
 </body>
 </html>
-
