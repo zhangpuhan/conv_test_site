@@ -34,14 +34,14 @@ src="https://www.facebook.com/tr?id=512586253523202&ev=PageView&noscript=1"
 <button id="addToCartButton">Purchase</button>
 <script type="text/javascript">
   $('#$addToCartButton').click(function() {
+    document.write('Hello');
     FB.api(
   '/512586253523202/events',
   'POST',
   {"data":"[\n  {\n    \"event_name\": \"Purchase\",\n    \"event_time\": 1624210504,\n    \"action_source\": \"email\",\n    \"user_data\": {\n      \"em\": [\n        \"c55e2c14c977f238ecdd06991ef4b736c14891fb12c02bcdc2529ce8b746344a\"\n      ]\n    },\n    \"custom_data\": {\n      \"currency\": \"USD\",\n      \"value\": \"142.52\"\n    }\n  }\n]"},
   function(response) {
       document.write(response);
-  }
-);
+  });
   });
  </script>
 
