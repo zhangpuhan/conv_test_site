@@ -1,4 +1,4 @@
-export function is_chrome() {
+function is_chrome() {
   var isChromium = window.chrome;
   var winNav = window.navigator;
   var vendorName = winNav.vendor;
