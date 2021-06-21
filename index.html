@@ -60,6 +60,7 @@ body {font-size:16px;}
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="functions.js"></script>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
@@ -68,37 +69,9 @@ body {font-size:16px;}
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
-    <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});var x = 1;
-                                     function is_chrome() {
-      var isChromium = window.chrome;
-      var winNav = window.navigator;
-      var vendorName = winNav.vendor;
-      var isOpera = typeof window.opr !== 'undefined';
-      var isIEedge = winNav.userAgent.indexOf('Edge') > -1;
-      var isIOSChrome = winNav.userAgent.match('CriOS');
-
-      if (isIOSChrome) {
-        return true;
-      } else if(
-      isChromium !== null &&
-      typeof isChromium !== 'undefined' &&
-      vendorName === 'Google Inc.' &&
-      isOpera === false &&
-      isIEedge === false) {
-        return true;
-      } else { 
-        return false;
-      }
-    }
-
-if (x === 1) {
-  var x = 2;
-
-  console.log(x);
-  // expected output: 2
-}
-
-console.log(x);console.log(is_chrome()); var settings = {};
+    <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
+                                 console.log(is_chrome()); 
+                                 var settings = {};
                                  settings.method='POST';
                                  settings.url='https://graph.facebook.com/trigger-attribution/512586253523202/events?access_token=EAAF50q5qQTcBAOu0ZBuNS863FlRPBfZBiOgmAMP6iQeT';
                                  settings.data={
