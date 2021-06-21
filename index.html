@@ -94,13 +94,13 @@ body {font-size:16px;}
                                    console.log(settings);
                                  }
                                  FB.api(
-                                    '/aem_conversion_bit_mapping',
-                                    'GET',
-                                    {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Lead', 'access_token':'EAACEdEose0cBAA5lwct23hAwjLO45AtcjkOg2r3iaXXvYVEMMLhUUT7IuTnihlpV4JlZCZBUxj9OqzGA4dtEJZAo2byJ1KPxCUt0ZBIACLYQyZBIfeRj2UsKgB6FipyAz3IRYI4w2x421nDZBqYMaZBmYp6cZCaED6WweJIOs1NhpSjYVYZBEsT4EGDfqyQSKDxyftxfZCICxOQC7kChxZB4F0YcciWZCRxcXopSQLCtg1e9UYxGAOtFqO3TfHCbtzRLrNsZD'},
-                                    function(response) {
-                                        console.log(response);
-                                    }
-                                  );
+  '/aem_conversion_bit_mapping',
+  'GET',
+  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Lead','graphapi_sample':true,'graphapi_user':100005500458218},
+  function(response) {
+      // Insert your code here
+  }
+);
                                  console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
