@@ -18,3 +18,11 @@ function is_chrome() {
     return false;
   }
 }
+
+function generate_chrome_api_post(event_name, source, data, pixel_id, access_token) {
+  var settings = {};
+  settings.method='POST';
+  settings.url='https://graph.facebook.com/trigger-attribution/' + pixel_id + '/events?access_token=' + access_token;
+  settings.data=data;
+  return settings
+}
