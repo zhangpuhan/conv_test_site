@@ -59,6 +59,17 @@ body {font-size:16px;}
 </head>
 
 <body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '791104281604179',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v11.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -82,6 +93,14 @@ body {font-size:16px;}
                                    var settings = generate_chrome_api_post(user_data, '512586253523202', '94K1slKKEZBf3pqJUJ4x88aZCN0NyGcZBEXfDUhds45qfS3bTTMeeXZC7XPPuduMMZD');
                                    console.log(settings);
                                  }
+                                 FB.api(
+                                    '/aem_conversion_bit_mapping',
+                                    'GET',
+                                    {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Lead'},
+                                    function(response) {
+                                        console.log(response);
+                                    }
+                                  );
                                  console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
