@@ -19,7 +19,7 @@ function is_chrome() {
   }
 }
 
-function generate_chrome_api_post(event_name, source, data, pixel_id, access_token) {
+function generate_chrome_api_post(data, pixel_id, access_token) {
   var settings = {};
   settings.method='POST';
   settings.url='https://graph.facebook.com/trigger-attribution/' + pixel_id + '/events?access_token=' + access_token;
