@@ -98,12 +98,12 @@ if (x === 1) {
   // expected output: 2
 }
 
-console.log(x); var settings = {};function getServerTime() {return $.ajax({async: false}).getResponseHeader( 'Date' );}
+console.log(x); var settings = {};
                                  settings.method='POST';
                                  settings.url='https://graph.facebook.com/trigger-attribution/512586253523202/events?access_token=EAAF50q5qQTcBAOu0ZBuNS863FlRPBfZBiOgmAMP6iQeT';
                                  settings.data={
                                  'event_name': 'TestEvent',
-                                 'event_time': getServerTime(),
+                                 'event_time': $.now(),
                                  'action_source': 'email',
                                  'user_data': {'em': ['c55e2c14c977f238ecdd06991ef4b736c14891fb12c02bcdc2529ce8b746344a']},
                                  'custom_data': {'currency': 'USD','value': Math.round(Math.random() * 1000) / 10}
