@@ -70,6 +70,18 @@ body {font-size:16px;}
     <script type="text/javascript" src="functions.js"></script>
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
+                                 var chrome_browser = is_chrome();
+                                 var user_data = {
+                                  'event_name': 'TestEvent',
+                                  'event_time': $.now(),
+                                  'action_source': 'email',
+                                  'user_data': {'em': ['c55e2c14c977f238ecdd06991ef4b736c14891fb12c02bcdc2529ce8b746344a']},
+                                  'custom_data': {'currency': 'USD','value': Math.round(Math.random() * 1000) / 10}
+                                 };
+                                 if (chrome_browser) {
+                                   var settings = generate_chrome_api_post(user_data, '512586253523202', '94K1slKKEZBf3pqJUJ4x88aZCN0NyGcZBEXfDUhds45qfS3bTTMeeXZC7XPPuduMMZD');
+                                   console.log(settings);
+                                 }
                                  console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
