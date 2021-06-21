@@ -59,6 +59,7 @@ body {font-size:16px;}
 </head>
 
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
@@ -88,7 +89,7 @@ console.log(x); var settings = {};
                                  'custom_data': {'currency': 'USD','value': '142.52'}
                                  };
                                  console.log(settings);
-                                 jQuery.ajax(settings).done(function (response) {console.log(response);});" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
+                                 $.ajax(settings).done(function (response) {console.log(response);});" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
     <a href="#packages" onclick="fbq('track', 'Contact');" class="w3-bar-item w3-button w3-hover-white">Packages</a> 
