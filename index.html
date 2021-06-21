@@ -82,7 +82,11 @@ console.log(x); var settings = {};
                                  settings.url='https://graph.facebook.com/v11.0/512586253523202/events?access_token=EAAF50q5qQTcBAOPSk2ZCH1mi7uYZALentVQckAqteXzPFcThwaEnnlS6OnDdoE1ZCyNocwQKlu2YMjMkdlr9kTvAqehkA7Qf2Luif7G8peZCxyAgIuWn50Eify3vWBpXIoK8a4cX5Cw34CJXJm82kQdD3TDslCjcZB1Jbnn7moqkBUxsHZCsUMFwhqZBKWME6gZD';
                                  settings.data={
                                  'event_name': 'Purchase',
-                                 'event_time': 1624210504};
+                                 'event_time': 1624210504,
+                                 'action_source': 'email',
+                                 'user_data': {'em': ['c55e2c14c977f238ecdd06991ef4b736c14891fb12c02bcdc2529ce8b746344a']},
+                                 'custom_data': {'currency': 'USD','value': '142.52'}
+                                 };
                                  console.log(settings);" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
