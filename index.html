@@ -62,7 +62,7 @@ body {font-size:16px;}
   <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId            : '145634995501895',
+      appId            : '278448247404820',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v11.0'
@@ -93,13 +93,14 @@ body {font-size:16px;}
                                    var settings = generate_chrome_api_post(user_data, '512586253523202', '94K1slKKEZBf3pqJUJ4x88aZCN0NyGcZBEXfDUhds45qfS3bTTMeeXZC7XPPuduMMZD');
                                    console.log(settings);
                                  }
-                                 FB.api(
+FB.api(
   '/aem_conversion_bit_mapping',
   'GET',
-  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Lead','graphapi_sample':true,'graphapi_user':100005500458218, 'access_token':'EAACEdEose0cBAHaXISkZAuytGuysn3EpZCcNUaCcjQPojGCMFpEm5FFxPA2m8JV9aoB1TNYpGNbNMNgNmZCMjgBmogQwojEyloLZAm2yx4dnFtufGmslFkqpg1x7xUn31uRP8VH7ToJWUhVcxtO85E9DfsZBCxH9Kq7MCaFcLHSGwEZA2ZAJHeN4W7B26rWeZAy6ZCV3MoZBPsCARWNojZBZCxgefep4HAepj8Q7EkSbtoggqRSxZAKNVLYjZB8PuQvZCXvJmgZD'},
+  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token':'EAAD9P0jfZBRQBAPzT3byGTdp411ulZBUOJTbGA9EEdIiFZCQcUpkS7eUSvNaGWSokpM4rs7CMaE6esd7loMMQH48qSZA3ftk2dPVbWRXTTwamWHjcmg3ZAnN6hqEnQdYMp9AjQwYj43YK3pNUgiZBKk3XQSBlFsuWGZBgZBfw4VNHEi3CyKlapZBLZAtBa2PWrOX2RSCfUUBwImTMDZBUNbo50cJxy1kVZBgxWUZD'},
   function(response) {
-     console.log(response);
+      console.log(response);
   }
+);
 );
                                  console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
