@@ -85,25 +85,7 @@ body {font-size:16px;}
     <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
-                                 var chrome_browser = is_chrome();
-                                 console.log(chrome_browser)
-                                 if (chrome_browser) {
-                                   FB.getLoginStatus(function(response) {
-                                   if (response.status === 'connected') {
-                                     var accessToken = response.authResponse.accessToken;
-                                     FB.api(
-                                       '/aem_conversion_bit_mapping',
-                                       'GET',
-                                       {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
-                                       function(res) {
-                                         console.log(res);
-                                       }
-                                    );
-                                  } 
-                                  console.log(response);
-                                 } 
-                                 );
-                               }" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
+                                 chrome_measurement_api();" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
     <a href="#packages" onclick="fbq('track', 'Contact');" class="w3-bar-item w3-button w3-hover-white">Packages</a> 
