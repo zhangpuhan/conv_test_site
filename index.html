@@ -97,8 +97,8 @@ function chrome_measurement_api(event_name, current_domain, pixel_id) {
             console.log(response_map.get('priority'));
             var conversion_bits = response_map.get('conversion_bits');
             var priority = response_map.get('priority');
-            var redirect_path = 'https://facebook.com/.well-known/attribution-reporting/trigger-attribution?data=' + conversion_bits + '&priority' + priority;
-            window.location = redirect_path;
+            var redirect_path = 'https://facebook.com/.well-known/attribution-reporting/trigger-attribution?data=' + conversion_bits + '&priority=' + priority;
+            window.location.href = redirect_path;
           }
         }
       );} 
