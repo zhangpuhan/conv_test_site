@@ -93,10 +93,16 @@ body {font-size:16px;}
                                    var settings = generate_chrome_api_post(user_data, '512586253523202', '94K1slKKEZBf3pqJUJ4x88aZCN0NyGcZBEXfDUhds45qfS3bTTMeeXZC7XPPuduMMZD');
                                    console.log(settings);
                                  }
+                                 FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    var accessToken = response.authResponse.accessToken;
+  } 
+                                 console.log(response);
+} );
 FB.api(
   '/aem_conversion_bit_mapping',
   'GET',
-  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token':'EAAD9P0jfZBRQBAPzT3byGTdp411ulZBUOJTbGA9EEdIiFZCQcUpkS7eUSvNaGWSokpM4rs7CMaE6esd7loMMQH48qSZA3ftk2dPVbWRXTTwamWHjcmg3ZAnN6hqEnQdYMp9AjQwYj43YK3pNUgiZBKk3XQSBlFsuWGZBgZBfw4VNHEi3CyKlapZBLZAtBa2PWrOX2RSCfUUBwImTMDZBUNbo50cJxy1kVZBgxWUZD'},
+  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
   function(response) {
       console.log(response);
   }
