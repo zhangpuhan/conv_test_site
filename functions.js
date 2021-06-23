@@ -19,10 +19,21 @@ function is_chrome() {
   }
 }
 
-function generate_chrome_api_post(data, pixel_id, access_token) {
-  var settings = {};
-  settings.method='POST';
-  settings.url='https://graph.facebook.com/trigger-attribution/' + pixel_id + '/events?access_token=' + access_token;
-  settings.data=data;
-  return settings
+function chrome_measurement_api() {
+  var chrome_browser = is_chrome();
+  console.log(chrome_browser)
+  if (chrome_browser) {
+    FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      var access_token = response.authResponse.accessToken;
+      FB.api(
+        '/aem_conversion_bit_mapping',
+        'GET',
+        {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
+        function(res) {
+          console.log(res);
+        }
+      );} 
+    console.log(response);});
+  }
 }
