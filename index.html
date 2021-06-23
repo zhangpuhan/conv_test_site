@@ -69,6 +69,9 @@ body {font-size:16px;}
     });
   };
 </script>
+  
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=278448247404820&autoLogAppEvents=1" nonce="HlqH9WCx"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Sidebar/menu -->
@@ -79,6 +82,7 @@ body {font-size:16px;}
   </div>
   <div class="w3-bar-block">
     <script type="text/javascript" src="functions.js"></script>
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
                                  var chrome_browser = is_chrome();
@@ -99,14 +103,7 @@ body {font-size:16px;}
   } 
                                  console.log(response);
 } );
-FB.api(
-  '/aem_conversion_bit_mapping',
-  'GET',
-  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
-  function(response) {
-      console.log(response);
-  }
-); console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
+                                 console.log(is_chrome());" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
     <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});" class="w3-bar-item w3-button w3-hover-white">Services</a> 
     <a href="#designers" onclick="fbq('track', 'SubmitApplication');" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
     <a href="#packages" onclick="fbq('track', 'Contact');" class="w3-bar-item w3-button w3-hover-white">Packages</a> 
