@@ -56,8 +56,7 @@ body {font-size:16px;}
     scheduleOne();
   })()
 </script>
-<!--   <script>
-    function is_chrome() {
+function is_chrome() {
   var isChromium = window.chrome;
   var winNav = window.navigator;
   var vendorName = winNav.vendor;
@@ -77,8 +76,8 @@ body {font-size:16px;}
     return false;
   }
 }
-
-function chrome_measurement_api() {
+  
+function chrome_measurement_api(event_name, current_domain, pixel_id) {
   var chrome_browser = is_chrome();
   console.log(chrome_browser)
   if (chrome_browser) {
@@ -88,15 +87,20 @@ function chrome_measurement_api() {
       FB.api(
         '/aem_conversion_bit_mapping',
         'GET',
-        {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': access_token},
+        {'current_domain':'puhanzhang.com','pixel_id': pixel_id,'event_name': event_name, 'access_token': access_token},
         function(res) {
           console.log(res);
+          let response_map = new Map(Object.entries(res));
+          if (response_map.has('conversion_bits') && response_map.has('priority')) {
+            console.log(response_map['conversion_bits']);
+            console.log(response_map['priority']);
+          }
         }
       );} 
     console.log(response);});
   }
 }
-    </script> -->
+</script>
 </head>
 
 <body>
@@ -122,7 +126,7 @@ function chrome_measurement_api() {
     <h3 class="w3-padding-64"><b>Bear<br>Dog</b></h3>
   </div>
   <div class="w3-bar-block">
-    <script type="text/javascript" src="functions.js"></script>
+<!--     <script type="text/javascript" src="functions.js"></script> -->
     <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
