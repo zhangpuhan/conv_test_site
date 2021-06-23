@@ -100,6 +100,14 @@ body {font-size:16px;}
                                  FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     var accessToken = response.authResponse.accessToken;
+                                 FB.api(
+  '/aem_conversion_bit_mapping',
+  'GET',
+  {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
+  function(res) {
+      console.log(res);
+  }
+);
   } 
                                  console.log(response);
 } );
