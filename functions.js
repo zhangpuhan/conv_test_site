@@ -29,7 +29,7 @@ function chrome_measurement_api() {
       FB.api(
         '/aem_conversion_bit_mapping',
         'GET',
-        {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': accessToken},
+        {'current_domain':'puhanzhang.com','pixel_id':'512586253523202','event_name':'Purchase', 'access_token': access_token},
         function(res) {
           console.log(res);
         }
