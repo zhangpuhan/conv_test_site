@@ -136,15 +136,19 @@ function chrome_measurement_api(event_name, current_domain, pixel_id) {
     <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <a href="#" onclick="fbq('track', 'Schedule');" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#showcase" onclick="fbq('track', 'Purchase', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
-                                 chrome_measurement_api('Purchase', 'puhanzhang.com', '512586253523202');
+                                 chrome_measurement_api('Purchase', 'puhanzhang.com', '512586253523202');" class="w3-bar-item w3-button w3-hover-white">Purchase</a> 
+    <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
+                                 chrome_measurement_api('AddToCart', 'puhanzhang.com', '512586253523202');
                                  var xhr = new XMLHttpRequest();
                                  xhr.open('GET', 'https://adtech-dot-peacock-demo-283822.nw.r.appspot.com/conversion?conversion-type=signup', true);
                                  xhr.send();
-                                 console.log(xhr.responseText);" class="w3-bar-item w3-button w3-hover-white">Purchase</a> 
-    <a href="#services" onclick="fbq('track', 'AddToCart', {value: Math.round(Math.random() * 1000) / 10, currency: 'USD'});
-                                 chrome_measurement_api('AddToCart', 'puhanzhang.com', '512586253523202');" class="w3-bar-item w3-button w3-hover-white">AddToCart</a> 
-    <a href="#designers" onclick="fbq('track', 'SubmitApplication');
-                                  chrome_measurement_api('SubmitApplication', 'puhanzhang.com', '512586253523202');" class="w3-bar-item w3-button w3-hover-white">SubmitApplication</a> 
+                                 console.log(xhr.responseText);" class="w3-bar-item w3-button w3-hover-white">AddToCart</a> 
+    <a href="#designers" onclick="fbq('track', 'Subscribe');
+                                  chrome_measurement_api('Subscribe', 'puhanzhang.com', '512586253523202');
+                                 var xhr = new XMLHttpRequest();
+                                 xhr.open('GET', 'https://adtech-dot-peacock-demo-283822.nw.r.appspot.com/conversion?conversion-type=checkout', true);
+                                 xhr.send();
+                                 console.log(xhr.responseText);" class="w3-bar-item w3-button w3-hover-white">Subscribe</a> 
     <a href="#packages" onclick="fbq('track', 'Contact');
                                  chrome_measurement_api('Contact', 'puhanzhang.com', '512586253523202');" class="w3-bar-item w3-button w3-hover-white">Contact</a> 
     <a href="#contact" onclick="fbq('track', 'FindLocation');
